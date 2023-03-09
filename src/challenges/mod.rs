@@ -1,8 +1,8 @@
 use crate::io::manage_dataset::{load_file, save_file};
 
 pub mod dna;
+pub mod revc;
 pub mod rna;
-
 pub trait Runnable {
     fn execute(&self, input: &str) -> String;
     fn run(&self) {
