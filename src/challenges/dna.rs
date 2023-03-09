@@ -6,8 +6,7 @@ pub struct Dna;
 impl Runnable for Dna {
     fn execute(&self, input: &str) -> String {
         let (a, c, g, t) = Self::count_dna_nucleotides(input);
-        println!("{} {} {} {}", a, c, g, t);
-        String::from("Done")
+        format!("{} {} {} {}", a, c, g, t)
     }
 }
 
