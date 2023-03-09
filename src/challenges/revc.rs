@@ -5,12 +5,12 @@ pub struct Revc;
 
 impl Runnable for Revc {
     fn execute(&self, input: &str) -> String {
-        Self::transcribing_dna_into_rna(input)
+        Self::complement_a_strand_of_dna(input)
     }
 }
 
 impl Revc {
-    fn transcribing_dna_into_rna(dna: &str) -> String {
+    fn complement_a_strand_of_dna(dna: &str) -> String {
         dna.chars()
             .map(|c| match c {
                 'A' => 'T',
