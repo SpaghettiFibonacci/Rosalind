@@ -1,6 +1,7 @@
 use super::Runnable;
 
 // Enumerating gene orders
+// TODO: make it work for 1,2
 pub struct Perm;
 
 impl Runnable for Perm {

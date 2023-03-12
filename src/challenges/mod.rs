@@ -2,6 +2,7 @@ use crate::io::manage_dataset::{load_file, save_file};
 
 pub mod dna;
 pub mod hamm;
+pub mod iprb;
 pub mod perm;
 pub mod revc;
 pub mod rna;
