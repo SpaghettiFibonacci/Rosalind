@@ -21,3 +21,16 @@ impl Prtm {
         format!("{:.3}", total_weight)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_find_motif_dna() {
+        let input = "SKADYEK";
+        let expected = "821.392";
+
+        assert_eq!(expected, Prtm::find_motif_dna(input));
+    }
+}

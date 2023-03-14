@@ -22,3 +22,15 @@ impl Hamm {
         count.to_string()
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_counting_point_mutations() {
+        let input = "GAGCCTACTAACGGGAT\nCATCGTAATGACGGCCT";
+        let result = Hamm::counting_point_mutations(input);
+        assert_eq!(result, "7");
+    }
+}

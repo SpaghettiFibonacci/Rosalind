@@ -30,3 +30,26 @@ impl Iprb {
         format!("{:.5}", result)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_mendels_first_law() {
+        // Test with example input from Rosalind
+        let problem = Iprb;
+        let input = "2 2 2";
+        assert_eq!(problem.execute(input), "0.78333");
+
+        // Test with all dominant alleles
+        let problem = Iprb;
+        let input = "5 0 0";
+        assert_eq!(problem.execute(input), "1.00000");
+
+        // Test with no dominant alleles
+        let problem = Iprb;
+        let input = "0 4 3";
+        assert_eq!(problem.execute(input), "0.50000");
+    }
+}

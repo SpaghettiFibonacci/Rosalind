@@ -53,3 +53,18 @@ impl Perm {
         permutations
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_enumerating_gene_orders() {
+        let input = "3";
+        let result = Perm::enumerating_gene_orders(input);
+        assert_eq!(
+            result,
+            "6\r\n1 2 3\r\n1 3 2\r\n2 1 3\r\n2 3 1\r\n3 2 1\r\n3 1 2"
+        );
+    }
+}

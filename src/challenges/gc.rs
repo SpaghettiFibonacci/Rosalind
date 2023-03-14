@@ -38,3 +38,24 @@ impl Gc {
         format!("{}\r\n{:.6}", highest_gc_content_label, highest_gc_content)
     }
 }
+
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_compute_gc_content() {
+        let input = ">Rosalind_6404
+CCTGCGGAAGATCGGCACTAGAATAGCCAGAACCGTTTCTCTGAGGCTTCCGGCCTTCCC
+TCCCACTAATAATTCTGAGG
+>Rosalind_5959
+CCATCGGTAGCGCATCCTTAGTCCAATTAAGTCCCTATCCAGGCGCTCCGCCGAAGGTCT
+ATATCCATTTGTCAGCAGACACGC
+>Rosalind_0808
+CCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGAC
+TGGGAACCTGCGGGCAGTAGGTGGAAT";
+        assert_eq!(
+            Gc::compute_gc_content(input),
+            "Rosalind_0808\r\n60.919540".to_string()
+        );
+    }
+}

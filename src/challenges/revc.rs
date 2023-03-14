@@ -23,3 +23,26 @@ impl Revc {
             .collect::<String>()
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn complement_a_strand_of_dna() {
+        let dna = "GTCAATG";
+        let expected = "CATTGAC".to_string();
+        assert_eq!(Revc::complement_a_strand_of_dna(dna), expected);
+
+        let dna = "AGTC";
+        let expected = "GACT".to_string();
+        assert_eq!(Revc::complement_a_strand_of_dna(dna), expected);
+
+        // Test with invalid DNA characters
+        let dna_with_invalid_chars = "AGTXCAN";
+        assert_ne!(
+            Revc::complement_a_strand_of_dna(dna_with_invalid_chars),
+            dna_with_invalid_chars.to_string()
+        );
+    }
+}

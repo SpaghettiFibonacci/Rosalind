@@ -24,9 +24,28 @@ impl Prot {
         let mut protein = String::new();
 
         for codon in rna_codons {
-            protein = format!("{}{}", protein, rna_codon_to_ammino_acid(&codon));
+            let result = rna_codon_to_ammino_acid(&codon);
+            match result.as_str() {
+                "Stop" => break,
+                _ => {
+                    protein = format!("{}{}", protein, rna_codon_to_ammino_acid(&codon));
+                }
+            }
         }
 
         protein
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_translating_rna_to_protein() {
+        let input = "AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA";
+        let expected = "MAMAPRTEINSTRING";
+
+        assert_eq!(expected, Prot::translating_rna_to_protein(input));
     }
 }

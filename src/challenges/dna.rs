@@ -29,3 +29,19 @@ impl Dna {
         (a, c, g, t)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_count_dna_nucleotides() {
+        let dna_str = "ACGTACTAGGCTAAC";
+        let result = Dna::count_dna_nucleotides(dna_str);
+        assert_eq!(result, (5, 4, 3, 3));
+
+        let dna_str = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";
+        let result = Dna::count_dna_nucleotides(dna_str);
+        assert_eq!(result, (20, 12, 17, 21));
+    }
+}

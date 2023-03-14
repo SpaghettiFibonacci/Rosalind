@@ -15,3 +15,19 @@ impl Rna {
         dna.replace('T', "U")
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_transcribing_dna_into_rna() {
+        let rna = Rna {};
+        assert_eq!(
+            rna.execute("GATGGAACTTGACTACGTAAATT"),
+            "GAUGGAACUUGACUACGUAAAUU"
+        );
+        assert_eq!(rna.execute("TTTT"), "UUUU");
+        assert_eq!(rna.execute(""), "");
+    }
+}
