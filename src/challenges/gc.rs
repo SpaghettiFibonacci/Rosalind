@@ -3,7 +3,6 @@ use std::collections::HashMap;
 use super::Runnable;
 
 // Computing GC Content
-// TODO: make it work for 1,2
 pub struct Gc;
 
 impl Runnable for Gc {

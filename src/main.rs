@@ -9,5 +9,6 @@ fn main() {
     // get_result(challenges::hamm::Hamm);
     // get_result(challenges::perm::Perm);
     // get_result(challenges::iprb::Iprb);
-    get_result(challenges::gc::Gc);
+    // get_result(challenges::gc::Gc);
+    get_result(challenges::subs::Subs);
 }
