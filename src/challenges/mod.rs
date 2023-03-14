@@ -5,9 +5,11 @@ pub mod gc;
 pub mod hamm;
 pub mod iprb;
 pub mod perm;
+pub mod prot;
 pub mod revc;
 pub mod rna;
 pub mod subs;
+
 pub trait Runnable {
     fn execute(&self, input: &str) -> String;
     fn run(&self) {

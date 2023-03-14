@@ -14,3 +14,4 @@ Rosalind bioinformatics solved with Rust
 - PERM Enumerating Gene Orders
 - REVC Complementing a Strand of DNA
 - SUBS Finding a Motif in DNA
+- PROT Translating RNA into Protein
