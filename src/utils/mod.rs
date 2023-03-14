@@ -10,7 +10,7 @@ pub fn rna_codon_to_ammino_acid(codon: &str) -> String {
         "ACU" | "ACC" | "ACA" | "ACG" => "T",
         "GCU" | "GCC" | "GCA" | "GCG" => "A",
         "UAU" | "UAC" => "Y",
-        "UAA" | "UAG" | "UGA" => "",
+        "UAA" | "UAG" | "UGA" => "Stop",
         "CAU" | "CAC" => "H",
         "CAA" | "CAG" => "Q",
         "AAU" | "AAC" => "N",
@@ -21,7 +21,7 @@ pub fn rna_codon_to_ammino_acid(codon: &str) -> String {
         "UGG" => "W",
         "CGU" | "CGC" | "CGA" | "CGG" | "AGA" | "AGG" => "R",
         "GGU" | "GGC" | "GGA" | "GGG" => "G",
-        _ => "",
+        _ => "Error",
     }
     .to_string()
 }
