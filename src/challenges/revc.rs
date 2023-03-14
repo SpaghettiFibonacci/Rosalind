@@ -29,7 +29,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn complement_a_strand_of_dna() {
+    fn test_complement_a_strand_of_dna() {
         let dna = "GTCAATG";
         let expected = "CATTGAC".to_string();
         assert_eq!(Revc::complement_a_strand_of_dna(dna), expected);
