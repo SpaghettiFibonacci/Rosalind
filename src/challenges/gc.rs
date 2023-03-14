@@ -1,5 +1,7 @@
 use std::collections::HashMap;
 
+use crate::utils::fasta_to_hashmap;
+
 use super::Runnable;
 
 // Computing GC Content
@@ -14,26 +16,9 @@ impl Runnable for Gc {
 impl Gc {
     /// Computing GC Content
     fn compute_gc_content(input: &str) -> String {
-        let labels = input
-            .lines()
-            .filter(|x| x.starts_with('>'))
-            .map(|x| x.replace('>', ""))
-            .collect::<Vec<String>>();
-        let dna_vec_from_multiple_fasta_entries = input
-            .split('>')
-            .map(|x| x.lines().collect::<Vec<&str>>())
-            .collect::<Vec<Vec<&str>>>()
-            .iter()
-            .filter(|x| x.len() > 1)
-            .map(|x| x[1..].join(""))
-            .collect::<Vec<String>>();
-
-        let map = labels
-            .iter()
-            .zip(dna_vec_from_multiple_fasta_entries.iter())
-            .map(|(k, v)| (k.to_string(), v.to_string()))
-            .collect::<HashMap<String, String>>();
-
+        let mut highest_gc_content = 0.0;
+        let mut highest_gc_content_label = "".to_string();
+        let map = fasta_to_hashmap(input.to_string());
         let mut gc_content_map = HashMap::new();
 
         for (k, v) in map {
@@ -43,8 +28,6 @@ impl Gc {
             gc_content_map.insert(k, gc_content);
         }
 
-        let mut highest_gc_content = 0.0;
-        let mut highest_gc_content_label = "".to_string();
         for (k, v) in gc_content_map {
             if v > highest_gc_content {
                 highest_gc_content = v;

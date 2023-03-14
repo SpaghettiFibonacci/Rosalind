@@ -6,6 +6,7 @@ pub mod hamm;
 pub mod iprb;
 pub mod perm;
 pub mod prot;
+pub mod prtm;
 pub mod revc;
 pub mod rna;
 pub mod subs;

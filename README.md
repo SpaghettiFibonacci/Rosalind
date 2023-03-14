@@ -15,3 +15,4 @@ Rosalind bioinformatics solved with Rust
 - REVC Complementing a Strand of DNA
 - SUBS Finding a Motif in DNA
 - PROT Translating RNA into Protein
+- PRTM Calculating Protein Mass

@@ -12,5 +12,6 @@ fn main() {
     // get_result(challenges::iprb::Iprb);
     // get_result(challenges::gc::Gc);
     // get_result(challenges::subs::Subs);
-    get_result(challenges::prot::Prot);
+    // get_result(challenges::prot::Prot);
+    get_result(challenges::prtm::Prtm);
 }
